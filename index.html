@@ -1023,7 +1023,8 @@ document.addEventListener('DOMContentLoaded', function () {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-awake');
-        wakeIo.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove('is-awake');
       }
     });
   }, { threshold: 0.3, rootMargin: '0px 0px -60px 0px' });
